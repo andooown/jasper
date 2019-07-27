@@ -30,6 +30,10 @@ process.on('unhandledRejection', (reason, p) => {
   Logger.e(`reason: ${reason}`);
 });
 
+process.on('uncaughtException', (e) => {
+  Logger.e(`Uncaught Exception: ${e}`);
+});
+
 let mainWindowPromiseResolver;
 const mainWindowPromise = new Promise((_resolve)=> mainWindowPromiseResolver = _resolve);
 
